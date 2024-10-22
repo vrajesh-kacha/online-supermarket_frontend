@@ -1,0 +1,62 @@
+.active{
+border-bottom: 1px solid black;
+}
+.pnf
+{
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.font-size{
+   font-size: 100px;
+}
+
+.back
+{
+  padding: 10px 20px;
+  background-color: white;
+  border:2px solid black;
+  text-decoration: none;
+  color:black
+}
+
+.back:hover{
+  background-color: black;
+  color: white;
+}
+
+.login {
+  width:70%;
+  margin-top: 10%;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; 
+}
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.main-content {
+  flex: 1; 
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

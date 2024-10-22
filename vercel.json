@@ -1,0 +1,12 @@
+{
+    "build": {
+      "command": "vite build",
+      "output": "dist"
+    },
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
+  }
