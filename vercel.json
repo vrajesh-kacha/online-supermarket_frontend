@@ -1,8 +1,5 @@
 {
-    "build": {
-      "command": "vite build",
-      "output": "dist"
-    },
+
     "routes": [
       {
         "src": "/(.*)",
