@@ -17,7 +17,7 @@ import "antd/dist/reset.css";
 import Products from "./components/pages/Products.jsx";
 import PaymentSuccess from "./components/pages/PaymentSuccess.jsx";
 import AdminProfile from "./components/pages/AdminProfile.jsx";
-import Cart from "./components/pages/cart.jsx";
+import Cart from "./components/pages/Cart.jsx";
 const App = () => {
   return (
     <>
