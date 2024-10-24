@@ -1,9 +1,12 @@
 {
-
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ]
-  }
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*.js|.*.css|.*.png|.*.jpg|.*.svg)",
+      "dest": "/dist/$1"
+    }
+  ]
+}
