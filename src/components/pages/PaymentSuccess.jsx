@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import successImage from './image.png'; 
+import successImage from '../../images/image.png'; 
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/auth';
 import toast from 'react-hot-toast';

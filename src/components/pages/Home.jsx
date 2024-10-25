@@ -3,10 +3,10 @@ import Layout from "./layouts/Layout.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Checkbox, Modal, Radio } from "antd";
-import { Prices } from "./Prices.jsx";
+import { Prices } from "./Prices.js";
 import { useCart } from "../context/cartContext.jsx";
 import { useAuth } from "../context/auth.jsx";
-import cartImage from "./cart.png";
+import cartImage from "../../images/cart.png";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState({});
