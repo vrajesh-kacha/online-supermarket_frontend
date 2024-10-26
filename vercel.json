@@ -6,7 +6,7 @@
     }
   ,
   {
-    "src": "/(.*.js|.*.css|.*.png|.*.jpg|.*.svg)",
+    "src": "/(.*.js|.*.css|.*.png)",
     "dest": "/dist/$1"
   }]
 }
