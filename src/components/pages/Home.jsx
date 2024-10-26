@@ -84,7 +84,7 @@ const Home = () => {
       }
       setCategories({ ...categories });
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error("something went wrong while getting product");
     }
   };
   useEffect(() => {

@@ -4,6 +4,7 @@ import Layout from "./layouts/Layout.jsx";
 import { useAuth } from "../context/auth.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
+import logo from '../../images/weblogo.png'
 
 const Cart = () => {
   const [cart, setCart] = useCart([]);
@@ -44,7 +45,7 @@ const Cart = () => {
           currency: "INR",
           name: "Vrajesh Kacha",
           description: "Test Transaction",
-          image: "https://example.com/your_logo",
+          image: logo,
           order_id: data.order.id,
           callback_url: `${import.meta.env.VITE_API}/api/v1/products/payment`,
           prefill: {

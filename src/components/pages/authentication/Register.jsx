@@ -24,9 +24,13 @@ import { useNavigate ,Link} from 'react-router-dom';
       let emailError = "";
       let passwordError = "";
       let phoneError = "";
-  
+      const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
       if (!username.trim()) {
         usernameError = "Username is required";
+        formIsValid = false;
+      }
+      else if (username.trim().length>5) {
+        usernameError = "Username length can be maximum 5";
         formIsValid = false;
       }
   
@@ -34,7 +38,11 @@ import { useNavigate ,Link} from 'react-router-dom';
         emailError = "Email is required";
         formIsValid = false;
       }
-  
+      else if(!emailRegex.test(email.trim())){
+        emailError = "Email is not valid";
+        formIsValid = false;
+      }
+      
       if (!password.trim()) {
         passwordError = "Password is required";
         formIsValid = false;
@@ -49,7 +57,6 @@ import { useNavigate ,Link} from 'react-router-dom';
   
      
       if (!formIsValid) return;
-      console.log(username,password,email,phone)
   
       try {
         const res = await axios.post(`${import.meta.env.VITE_API}/api/v1/user/register`, {
@@ -62,11 +69,9 @@ import { useNavigate ,Link} from 'react-router-dom';
         if (res.data.success) {
           setTimeout(()=>navigate("/login"),2000);
           toast.success("Registration successful");
-        } else {
-          toast.error(res.data.message);
         }
       } catch (error) {
-        toast.error(error.response?.data?.message || "An error occurred");
+        toast.error("An error occurred");
       }
     }
   
@@ -80,8 +85,10 @@ import { useNavigate ,Link} from 'react-router-dom';
                 <label className="form-label"><b>Username*</b></label>
                 <input
                   type="text"
-                  className={`form-control ${errors.username ? 'is-invalid' : ''}`}
-                  onChange={(e) => setUsername(e.target.value)}
+                  className={`form-control ${errors.username? 'is-invalid' : ''}`}
+                  onChange={(e) => {setUsername(e.target.value);
+                    setErrors({})
+                  }}
                   id="username"
                   placeholder="Username"
                   autoComplete='off'
@@ -91,9 +98,11 @@ import { useNavigate ,Link} from 'react-router-dom';
               <div className="mb-3">
                 <label className="form-label"><b>Email address*</b></label>
                 <input
-                  type="email"
+                  type="email novalidate/"
                   className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) =>{ setEmail(e.target.value);
+                    setErrors({})
+                  }}
                   id="email"
                   placeholder="Enter email"
                   autoComplete='off'
@@ -106,7 +115,9 @@ import { useNavigate ,Link} from 'react-router-dom';
                 <input
                   type="password"
                   className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {setPassword(e.target.value);
+                    setErrors({})
+                  }}
                   id="password"
                   placeholder="Password"
                   autoComplete='off'
@@ -119,7 +130,9 @@ import { useNavigate ,Link} from 'react-router-dom';
                 <input
                   type="number"
                   className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) =>{ setPhone(e.target.value);
+                    setErrors({})
+                  }}
                   id="phone"
                   placeholder="Enter phone number"
                   autoComplete='off'

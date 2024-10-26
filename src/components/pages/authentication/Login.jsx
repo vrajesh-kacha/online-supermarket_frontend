@@ -22,8 +22,15 @@ const Login = () => {
     let emailError = "";
     let passwordError = "";
 
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+
     if (!email.trim()) {
       emailError = "Email is required";
+      formIsValid = false;
+    }
+    else if(!emailRegex.test(email.trim())){
+      emailError = "Email is not valid";
       formIsValid = false;
     }
 
@@ -54,7 +61,7 @@ const Login = () => {
 
       }
     } catch (error) {
-      toast.error("An error occurred");
+      toast.error("Invalid username or password");
     }
   }
 
@@ -65,23 +72,26 @@ const Login = () => {
           <h1 className="h3 mb-3 fw-normal text-center"><b>Login</b></h1>
           <form onSubmit={submit}>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label"><b>Email address</b></label>
+              <label htmlFor="email" className="form-label"><b>Email address*</b></label>
               <input
-                type="email"
+                type="email novalidate/"
                 className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                onChange={(e) => setEmail(e.target.value)}
-                id="email"
+                onChange={(e) => {setEmail(e.target.value);
+                  setErrors({})
+                }}
                 placeholder="Enter email"
+                autoComplete="off"
               />
               {errors.email && <div className="invalid-feedback">{errors.email}</div>}
             </div>
             <div className="mb-3">
-              <label htmlFor="password" className="form-label"><b>Password</b></label>
+              <label htmlFor="password" className="form-label"><b>Password*</b></label>
               <input
                 type="password"
                 className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                onChange={(e) => setPassword(e.target.value)}
-                id="password"
+                onChange={(e) =>{ setPassword(e.target.value);
+                  setErrors({})}
+                }
                 placeholder="Password"
               />
               {errors.password && <div className="invalid-feedback">{errors.password}</div>}
