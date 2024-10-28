@@ -53,7 +53,7 @@ const CreateProduct = () => {
         image
       }, {
         headers: {
-          Authorization: auth.token,
+          Authorization: auth?.token,
           'Content-Type': 'multipart/form-data'
         }
       });
@@ -67,11 +67,9 @@ const CreateProduct = () => {
         setCategory(null);
         setQuantity("");
         setImage("");
-      } else {
-        toast.error(data.message);
       }
     } catch (error) {
-      return <Spinner/>
+      toast.error(error)
     }
   };
 
