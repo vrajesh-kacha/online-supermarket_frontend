@@ -118,6 +118,7 @@ const CreateProduct = () => {
               <div className="mb-3">
                 <input
                   type="text"
+                 id="name"
                   value={name}
                   placeholder="write a name"
                   className="form-control"
@@ -127,6 +128,7 @@ const CreateProduct = () => {
               <div className="mb-3">
                 <textarea
                   type="text"
+                  id="description"
                   value={description}
                   placeholder="write a description"
                   className="form-control"
@@ -137,6 +139,7 @@ const CreateProduct = () => {
               <div className="mb-3">
                 <input
                   type="number"
+                  id="price"
                   value={price}
                   placeholder="write a Price"
                   className="form-control"
@@ -146,6 +149,7 @@ const CreateProduct = () => {
               <div className="mb-3">
                 <input
                   type="number"
+                  id="quantity"
                   value={quantity}
                   placeholder="Write Quantity"
                   className="form-control"

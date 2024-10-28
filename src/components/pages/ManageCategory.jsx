@@ -116,6 +116,7 @@ const CreateCategory = () => {
                 <div className="col-md-10">
                   <input
                     type="text"
+                    id="newCategory"
                     className="form-control"
                     placeholder="Enter new Category"
                     value={newCategory}
@@ -181,6 +182,7 @@ const CreateCategory = () => {
                 <div className="col-md-8">
                   <input
                     type="text"
+                    id="modalnewCategory"
                     className="form-control"
                     placeholder="Edit Category"
                     value={newCategory}
