@@ -6,7 +6,6 @@ import axios from "axios";
 import { Select } from "antd";
 import { useAuth } from "../context/auth.jsx";
 import { useNavigate } from "react-router-dom";
-import Spinner from "./Spinner.jsx";
 const { Option } = Select;
 
 const CreateProduct = () => {
@@ -69,7 +68,7 @@ const CreateProduct = () => {
         setImage("");
       }
     } catch (error) {
-     console.log(error)
+  toast.error("somthing went wrong please try again")
     }
   };
 

@@ -65,12 +65,13 @@ const Products = () => {
   const updateProduct=async(e)=>{        
     e.preventDefault();
     try {
-      const {data} = await axios.patch(
+      const {data} = await axios.put(
         `${import.meta.env.VITE_API}/api/v1/products/update-product/${id}`,
-        {name, description, price, quantity,image},
+        {name:name.trim(),description: description.trim(), price, quantity,image},
         {
           headers: {
             Authorization: auth.token,
+        'Content-Type': 'multipart/form-data' 
           },
         }
       );
