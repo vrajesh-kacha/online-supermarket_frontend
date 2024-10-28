@@ -6,7 +6,7 @@ const Spinner = ({ok}) => {
   const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    if(!auth?.token){
+    if(ok){
     const interval = setInterval(() => {
       setCount((prevValue) => --prevValue);
     }, 1000);
@@ -20,7 +20,7 @@ const Spinner = ({ok}) => {
         className="d-flex flex-column justify-content-center align-items-center"
         style={{ height: "100vh" }}
       >
-       {!auth?.token ? <h1 className="Text-center">redirecting to you in {count} second </h1>:<h1>Loading....</h1>}
+       {ok ? <h1 className="Text-center">redirecting to you in {count} second </h1>:<h1>Loading....</h1>}
         <div className="spinner-border" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>

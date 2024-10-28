@@ -9,6 +9,7 @@ const PrivateRoute = () => {
     const [ok,setOk]=useState(false)
     useEffect(()=>{  
        const authCheck=async()=>{
+        try{
        const res=await axios.get(`${import.meta.env.VITE_API}/api/v1/user/user-auth`,{
        headers:{
            "Authorization":auth.token
@@ -17,6 +18,10 @@ const PrivateRoute = () => {
      if(res.data.success){
       setOk(true)
       }
+    }
+    catch(error){
+      setOk(false)
+    }
     }
    if(auth.token) { authCheck();
     }

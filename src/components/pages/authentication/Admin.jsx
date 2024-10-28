@@ -8,6 +8,7 @@ const Admin = () => {
     const [ok,setOk]=useState(false)
     useEffect(()=>{  
        const adminCheck=async()=>{
+        try{
        const res=await axios.get(`${import.meta.env.VITE_API}/api/v1/user/admin-auth`,{
        headers:{
            "Authorization":auth?.token
@@ -16,7 +17,8 @@ const Admin = () => {
      if(res.data.success){
       setOk(true)
       }
-      else{
+    }
+      catch(error){
         setOk(false)
       }
     }

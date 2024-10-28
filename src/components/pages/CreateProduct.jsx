@@ -69,7 +69,7 @@ const CreateProduct = () => {
         setImage("");
       }
     } catch (error) {
-      toast.error(error)
+     console.log(error)
     }
   };
 
