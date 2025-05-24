@@ -1,4 +1,4 @@
-import Layout from './layouts/Layout.jsx';
+
 import { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
@@ -56,7 +56,6 @@ const AdminProfile = () => {
   };
 
   return (
-    <Layout title="Update Your Profile">
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -119,7 +118,6 @@ const AdminProfile = () => {
           </div>
         </div>
       </div>
-    </Layout>
   );
 };
 

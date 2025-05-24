@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useCart } from "../context/cartContext.jsx";
-import Layout from "./layouts/Layout.jsx";
 import { useAuth } from "../context/auth.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -110,7 +109,6 @@ const Cart = () => {
     }
   };
   return (
-    <Layout title="Watch your Cart">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -168,7 +166,6 @@ const Cart = () => {
           </div>
         </div>
       </div>
-    </Layout>
   );
 };
 export default Cart;

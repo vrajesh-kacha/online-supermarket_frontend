@@ -1,4 +1,4 @@
-import Layout from '../layouts/Layout.jsx'
+
 import { useState } from 'react'
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
@@ -76,7 +76,6 @@ import { useNavigate ,Link} from 'react-router-dom';
     }
   
     return (
-      <Layout title="Register">
         <div className="container d-flex justify-content-center align-items-center vh-80">
           <div className="col-lg-4 col-md-6 col-sm-8 col-12">
             <h1 className="h3 mb-3 fw-normal text-center"><b>Sign Up</b></h1>
@@ -150,7 +149,6 @@ import { useNavigate ,Link} from 'react-router-dom';
           </p>
           </div>
         </div>
-      </Layout>
     );
   }
   

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Layout from "./layouts/Layout";
+import  { useEffect, useState } from "react";
 import AdminMenu from "./layouts/AdminMenu";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/auth";
 import {Modal,Select} from 'antd'
@@ -91,7 +89,7 @@ const Products = () => {
   }, []);
   
   return (
-    <Layout title="Manage Products">
+ 
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -229,7 +227,6 @@ const Products = () => {
     </Modal>
     </div>
       </div>
-    </Layout>
   );
 }
 export default Products;

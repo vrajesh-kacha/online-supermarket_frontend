@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Layout from "../layouts/Layout";
+import  { useState } from "react";
+
 import '../index.css';
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -66,7 +66,7 @@ const Login = () => {
   }
 
   return (
-    <Layout title="Login">
+  
       <div className="container-fluid d-flex justify-content-center align-items-center min-vh-80 p-0">
         <div className="col-lg-4 col-md-6 col-sm-8 col-12">
           <h1 className="h3 mb-3 fw-normal text-center"><b>Login</b></h1>
@@ -105,7 +105,6 @@ const Login = () => {
           </p>
         </div>
       </div>
-    </Layout>
   );
 };
 

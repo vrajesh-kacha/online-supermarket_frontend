@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Layout from "./layouts/Layout.jsx";
+import  { useEffect, useState } from "react";
 import AdminMenu from "./layouts/AdminMenu.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -103,7 +102,6 @@ const CreateCategory = () => {
   };
 
   return (
-    <Layout title="Manage categories">
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -203,7 +201,6 @@ const CreateCategory = () => {
           </Modal>
         </div>
       </div>
-    </Layout>
   );
 };
 

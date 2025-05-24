@@ -1,8 +1,6 @@
-import React from "react";
+
 import {Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home.jsx";
-import About from "./components/pages/About.jsx";
-import Contact from "./components/pages/Contact.jsx";
 import Pagenotfound from "./components/pages/Pagenotfound.jsx";
 import Register from "./components/pages/authentication/Register.jsx";
 import Login from "./components/pages/authentication/Login.jsx";
@@ -18,14 +16,15 @@ import Products from "./components/pages/Products.jsx";
 import PaymentSuccess from "./components/pages/PaymentSuccess.jsx";
 import AdminProfile from "./components/pages/AdminProfile.jsx";
 import Cart from "./components/pages/Cart.jsx";
+import Layout from "./components/pages/layouts/Layout.jsx";
 const App = () => {
   return (
     <>
       <Routes>
+      <Route element={<Layout />}>
       <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
+       
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="profile" element={<Profile />} />
@@ -39,6 +38,7 @@ const App = () => {
           <Route path="admin/products" element={<Products />} />
           <Route path="admin/users" element={<Users />} />
           <Route path="admin/profile" element={<AdminProfile/>} />
+        </Route>
         </Route>
         <Route path="/*" element={<Pagenotfound />} />
       </Routes>

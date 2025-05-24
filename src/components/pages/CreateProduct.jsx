@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Layout from "./layouts/Layout.jsx";
+import  { useState, useEffect } from "react";
 import AdminMenu from "./layouts/AdminMenu.jsx";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -17,7 +16,6 @@ const CreateProduct = () => {
   const [quantity, setQuantity] = useState("");
   const [image, setImage] = useState("");
   const [auth,setAuth]=useAuth()
-  const navigate=useNavigate()
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(`${import.meta.env.VITE_API}/api/v1/admin/get-categories`);
@@ -73,7 +71,6 @@ const CreateProduct = () => {
   };
 
   return (
-    <Layout title="Create Product">
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -163,7 +160,6 @@ const CreateProduct = () => {
           </div>
         </div>
       </div>
-    </Layout>
   );
 };
 

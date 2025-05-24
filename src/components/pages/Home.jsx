@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Layout from "./layouts/Layout.jsx";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Checkbox, Modal, Radio } from "antd";
@@ -121,7 +120,7 @@ const Home = () => {
   };
 
   return (
-    <Layout title="SuperMarket for shopping">
+ 
       <div className="container-fluid row">
         <div className="col-md-2">
           <h5>Filter by Category</h5>
@@ -237,7 +236,6 @@ const Home = () => {
           </div>
         </Modal>
       </div>
-    </Layout>
   );
 };
 
